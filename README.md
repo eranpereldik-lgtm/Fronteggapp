@@ -49,12 +49,12 @@ You can find your subdomain in the frontegg dashboard keys and domains
 Create server/.env and add the following:
 
 FE_VENDOR_AUTH_BASE=https://api.frontegg.com/auth/vendor
-FE_API_TOKEN_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains);
-FE_API_TOKEN_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains);
-FE_IDENTITY_BASE=https://api.frontegg.com/identity;
-FE_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - applications - inside the application settings - the ID);
-FE_TEST_ROLE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your fronegg dashboard - entitlments - roles - pick the role ID you want new users to be invited with);
-PORT=3001;
+FE_API_TOKEN_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains)
+FE_API_TOKEN_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains)
+FE_IDENTITY_BASE=https://api.frontegg.com/identity
+FE_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - applications - inside the application settings - the ID)
+FE_TEST_ROLE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your fronegg dashboard - entitlments - roles - pick the role ID you want new users to be invited with)
+PORT=3001
 
 Thank you!
 
