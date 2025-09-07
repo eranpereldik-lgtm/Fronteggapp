@@ -48,7 +48,7 @@ You can find your subdomain in the frontegg dashboard keys and domains
 # Server: 
 Create server/.env and add the following:
 
-'''env
+env
 FE_VENDOR_AUTH_BASE=https://api.frontegg.com/auth/vendor
 FE_API_TOKEN_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains)
 FE_API_TOKEN_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains)
