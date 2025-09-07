@@ -1,12 +1,67 @@
-# React + Vite
+# Eran's frontegg installed calculator app:
+Quick start:
+# 1. Clone/download this repo
+git clone https://github.com/YOUR_USERNAME/frontegg-react-app.git
+cd frontegg-react-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 2. Install frontend deps
+npm install
 
-Currently, two official plugins are available:
+# 3. Install backend deps
+cd server
+npm install
+cd ..
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 4. Create .env
+you must create server/.env with your Frontegg credentials (see below)
 
-## Expanding the ESLint configuration
+# 5. Start backend (in one terminal)
+cd server
+npm start
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 6. Start frontend (in another terminal)
+cd ..
+npm run dev
+
+# 7. Open https://localhost:5173
+
+# What did I put there?
+# Client (Vite + React):
+Frontegg hosted login
+Shows username + profile photo
+Admin portal button
+E-Mail invite form (Calls in the backend)
+Calculator.. So the app can do something
+
+# Backend:
+POST /api/invite → invites a user & assigns role
+Uses Vendor auth (clientId + secret) to mint a JWT, then calls global Frontegg Identity API to create invites
+
+# How do you make it work?
+
+# Client: 
+Edit src/main.jsx and edit the following:
+const contextOptions = {
+  baseUrl: 'https://YOUR-SUBDOMAIN.frontegg.com',
+};
+You can find your subdomain in the frontegg dashboard keys and domains
+# Server: 
+Create server/.env and add the following:
+
+FE_VENDOR_AUTH_BASE=https://api.frontegg.com/auth/vendor
+FE_API_TOKEN_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains)
+FE_API_TOKEN_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - keys and domains)
+FE_IDENTITY_BASE=https://api.frontegg.com/identity
+FE_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your frontegg dashboard - applications - inside the application settings - the ID)
+FE_TEST_ROLE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx (From your fronegg dashboard - entitlments - roles - pick the role ID you want new users to be invited with)
+PORT=3001
+
+Thank you!
+
+
+
+
+
+
+
+
