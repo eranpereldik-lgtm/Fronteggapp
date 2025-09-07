@@ -1,4 +1,5 @@
-Troubleshooting guide:
+# please read this in code view
+# Troubleshooting guide:
 
 Invite link redirects to localhost:3000 unexpectedly:
 
@@ -48,7 +49,7 @@ Refresh token – Managed by the frontegg client (SDK) that handles silent refre
 
 a 401 error can show up in the logs when the refresh token refreshes as this is a method for the SDK to check if the user is logged in or not.
 
-User active tenant change via API:
+# User active tenant change via API:
 
 Step 1: Get a bearer token:
 curl --location --request POST 'https://api.frontegg.com/auth/vendor' \
@@ -70,7 +71,7 @@ curl --location --request PUT 'https://api.frontegg.com/identity/resources/users
 
 I would use this in support to debug users issue, fix mis assignment to tenants, account recovery – if a user deleted himself from tenant by mistake
 
-Block domain:
+# Block domain:
 I created a prehook triggers at signup with code integration. Fail close behaviour.
 I added this code to the hook:
 
@@ -102,6 +103,9 @@ exports.onEvent = async (event) => {
 
   return { verdict: 'allow', continue: true, response: {} };
 };
+
+This can be monitored in the hooks screen where I can see how many blocks are being made by this hook.
+Or can be integrated via slack integration to send a warning when a sign up is blocked.
 
 
 Part D: 
@@ -155,5 +159,6 @@ I am sorry for the inconvenience and I expect to update you within the next 24 h
 -	Three enterprise tickets: I want to get status report for each one of them, according to their complexity I will send them to my team members. I will make sure the entire team is aware of these tickets and that they are handled in all time zones.
 -	Feature request: I will make sure the definitions of the feature are clear, and that R&D are aware of the urgency. I will try to get an ETA and update sales
 -	I will update my manager to make sure he is aware of the workload on the team and ask for his help with pushing things with R&D/Devops when needed
+
 
 
